@@ -13,7 +13,7 @@
 
 'use restrict'
 
- // function get(movieTitle) {
+ function get(movieTitle) {
  	const keys = require('./key.js');
 	const request = require('request');
 	const googleUrl = "https://www.googleapis.com/customsearch/v1?key=" +keys.googleApiKey+ "&cx=" +keys.googleAppId+ "&q=" +movieTitle+ "+movie";
@@ -21,7 +21,6 @@
 		if (error) throw (error);
 		console.log(JSON.parse(body).items[0].snippet);
 	});
- // };
+ };
 
- // module.exports = get;
-// get("contact");
+ module.exports = get;
